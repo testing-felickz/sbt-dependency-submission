@@ -54,3 +54,5 @@ val `sbt-github-dependency-submission` = project
       publishLocal.value
     }
   )
+  
+  dependsOn(RootProject(uri("https://github.com/felickz/does-not-exist#v0.0.1)))
