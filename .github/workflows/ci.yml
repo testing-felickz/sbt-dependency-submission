@@ -15,6 +15,11 @@ jobs:
         working-directory: sbt-plugin
     steps:
       - uses: actions/checkout@v3
+      - name: Setup Git Auth
+        run: |
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< ${{ secrets.SSH_PRIVATE_KEY }}
+          
       - uses: coursier/setup-action@v1.2.0-M3
         with:
           apps: scalafmt sbt
