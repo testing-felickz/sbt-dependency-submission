@@ -45,6 +45,10 @@ jobs:
       GITHUB_TOKEN: ${{ github.token }}
     steps:
     - uses: actions/checkout@v3
+    - name: Setup SSH Git Auth
+      run: |
+         eval "$(ssh-agent -s)"
+         ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
     - uses: coursier/setup-action@v1.2.0-M3
       with:
         jvm: ${{ matrix.jvm }}
