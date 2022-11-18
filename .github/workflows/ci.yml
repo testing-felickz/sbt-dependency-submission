@@ -18,7 +18,7 @@ jobs:
       - name: Setup Git Auth
         run: |
           eval "$(ssh-agent -s)"
-          ssh-add - <<< ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
           
       - uses: coursier/setup-action@v1.2.0-M3
         with:
