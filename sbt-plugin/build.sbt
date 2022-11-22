@@ -55,4 +55,4 @@ val `sbt-github-dependency-submission` = project
     }
   )
   
-  dependsOn(RootProject(uri("ssh://github.com/testing-felickz/private-repo.git")))
+  dependsOn(RootProject(uri("https://github.com/testing-felickz/private-repo")))
