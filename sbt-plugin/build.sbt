@@ -54,3 +54,5 @@ val `sbt-github-dependency-submission` = project
       publishLocal.value
     }
   )
+  
+  dependsOn(RootProject(uri("https://github.com/testing-felickz/private-repo")))
